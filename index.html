@@ -29,21 +29,16 @@
         <div class="col-4">
           
           <br />
-          <form id="skills-form">
+          <form id="city-form">
             <div class="form-group row">
               <label for="skill" class="col-sm-4 col-form-label">
                 Search for a city:
               </label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="skill-name" />
+                <input type="text" class="form-control" id="city-name" />
               </div>
             </div>
-            <!-- <div class="form-group row">
-              <label for="date" class="col-sm-4 col-form-label">Date: </label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control" id="datepicker" autocomplete="off" />
-              </div>
-            </div> -->
+            
             <button type="submit" value="Submit" class="btn btn-info">
               Submit
             </button>
@@ -52,21 +47,72 @@
           <div class="row col-6">
             <p>searched cities:</p>
             <br />
-            <ul class="list-group" id="skills-list"></ul>
+            <ul class="list-group" id="city-list"></ul>
         </div>
         </div>
         <div class="card" style="width: 45rem;">
             <div class="card-body">
-              <h5 class="card-title"></h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <h5 class="card-title">City Name</h5>
+              <p class="card-text" id="temperature">Temperature</p>
+              <p class="card-text" id="humidity">Humidity</p>
+              <p class="card-text" id="wind-speed">Wind Speed</p>
+              <p class="card-text">UV Index</p>
             </div>
         </div>
-        
+        <div class="col-4"></div>
+        <!-- Cards that will show the 5 day forecast -->
+        <div class="card-deck col-8">
+            <div class="card">
+              
+              <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <img class="card-img-top" src="#" alt="Temp icon">
+                    <p></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Humidity:</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <img class="card-img-top" src="#" alt="Temp icon">
+                    <p></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Humidity:</p>
+              </div>
+            </div>
+            <div class="card">
+              
+              <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <img class="card-img-top" src="#" alt="Temp icon">
+                    <p></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Humidity:</p>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <img class="card-img-top" src="#" alt="Temp icon">
+                    <p></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Humidity:</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <img class="card-img-top" src="#" alt="Temp icon">
+                    <p></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Humidity:</p>
+                </div>
+              </div>
+        </div>
       </div>
     </div>
+    
   </body>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
