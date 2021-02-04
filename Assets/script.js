@@ -69,7 +69,7 @@ formEl.on('submit', handleFormSubmit);
 // });
 var cityName = "Tracy";
 
-var requestUrl = "http://api.openweathermap.org/data/2.5/weather?id=524901&appid=007b58b57ff2308d83f8a775c2291ca5";
+var requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
 console.log("requestUrl: ", requestUrl);
 fetch(requestUrl)
   .then(function (response) {
@@ -77,7 +77,7 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log('weathermap Data \n----------');
-    console.log("data: ", data.name);
+    console.log("data: ", data);
     for (var i = 0; i < data.length; i++) {
       console.log(data[i].name);
       console.log(data[i].id);
