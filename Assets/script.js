@@ -45,7 +45,7 @@ var handleFormSubmit = function (event) {
 
   cityName = nameInput;
   callApi1();
-
+  callApi3();
 };
 
 var cityName = " ";
@@ -93,20 +93,20 @@ function callApi2(lat, longe){
     })
     .then(function (data2) {
         console.log('Data2 ', data2);
-        // console.log("data2: ", data2);
-        // for (var i = 0; i < data2.length; i++) {
-        // console.log("name: ", data2[i].name);
-        // console.log("temp: ", data2.main.temp);
-        // }
-        // console.log("temp: ", data2.main.temp);
-        // console.log("humidity: ", data2.main.humidity);
-        // console.log("speed: ", data2.wind.speed);
-        // if(cityName === ""){
-        //     return;
-        // }else{
-        //     $("#temperature").text("Temperature: " + data2.main.temp + " F");
-        //     $("#humidity").text("Humidity: " + data2.main.humidity + " %");
-        //     $("#wind-speed").text("Wind speed: " + data2.wind.speed + " MPH");
-        // }
+        $("#UV-index").text("UV Index: " + data2.value);
+    });
+}
+
+// API to call for the 5 day forecast
+function callApi3(){
+    var requestUrl3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=007b58b57ff2308d83f8a775c2291ca5";
+    console.log("requestUrl3: ", requestUrl3);
+    fetch(requestUrl3)
+    .then(function (response3) {
+        return response3.json();
+    })
+    .then(function (data3) {
+        console.log('Data3 ', data3);
+        //$("#UV-index").text("UV Index: " + data3.value);
     });
 }
