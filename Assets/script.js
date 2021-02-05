@@ -1,6 +1,11 @@
 //api key - 007b58b57ff2308d83f8a775c2291ca5
 //api key - c6ac65a79b2de0a72c3f209350782695
 
+$(document).ready(function(){
+    $("#display-section").hide();
+    $("#five-day-section").hide();
+});
+
 var formEl = $('#city-form');
 var nameInputEl = $('#city-name');
 
@@ -13,6 +18,9 @@ var printSkills = function (name) {
   listEl.appendTo(skillsListEl);
 };
 
+//Current day
+var currentDay = new Date();
+//$("#currentDay").append(currentDay);
 
 
 var handleFormSubmit = function (event) {
@@ -24,20 +32,23 @@ var handleFormSubmit = function (event) {
   if (!nameInput ) {
     console.log('You need to fill out the form!');
     return;
+  }else{
+    $("#display-section").show();
+    $("#five-day-section").show();
   }
 
   printSkills(nameInput);
-
+   
   // resets form
   nameInputEl.val('');
-  $(".card-title").text(nameInput);
+  $(".card-title").text(nameInput + " (" + currentDay.toLocaleDateString() + ")");
 
   cityName = nameInput;
   callApi1();
 
 };
 
-var cityName = "";
+var cityName = " ";
 
 
 formEl.on('submit', handleFormSubmit);
