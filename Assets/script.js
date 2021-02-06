@@ -9,13 +9,13 @@ $(document).ready(function(){
 var formEl = $('#city-form');
 var nameInputEl = $('#city-name');
 
-var skillsListEl = $('#city-list');
+var cityListEl = $('#city-list');
 
-var printSkills = function (name) {
+var printCity = function (name) {
   var listEl = $('<li>');
   var listDetail = name;
   listEl.addClass('list-group-item').text(listDetail);
-  listEl.appendTo(skillsListEl);
+  listEl.appendTo(cityListEl);
 };
 
 //Current day
@@ -37,7 +37,7 @@ var handleFormSubmit = function (event) {
     $("#five-day-section").show();
   }
 
-  printSkills(nameInput);
+  printCity(nameInput);
    
   // resets form
   nameInputEl.val('');
@@ -57,21 +57,17 @@ formEl.on('submit', handleFormSubmit);
 //API call to get the information by the city name
 function callApi1(){
     var requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
-    console.log("requestUrl: ", requestUrl);
+    //console.log("requestUrl: ", requestUrl);
     fetch(requestUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-        console.log('weathermap Data \n----------');
-        console.log("data: ", data);
-        for (var i = 0; i < data.length; i++) {
-        console.log("name: ", data[i].name);
-        console.log("temp: ", data.main.temp);
-        }
-        console.log("temp: ", data.main.temp);
-        console.log("humidity: ", data.main.humidity);
-        console.log("speed: ", data.wind.speed);
+        
+        //console.log("data: ", data);
+        // console.log("temp: ", data.main.temp);
+        // console.log("humidity: ", data.main.humidity);
+        // console.log("speed: ", data.wind.speed);
         if(cityName === ""){
             return;
         }else{
@@ -86,13 +82,13 @@ function callApi1(){
 // API to call the UV data
 function callApi2(lat, longe){
     var requestUrl2 = "http://api.openweathermap.org/data/2.5/uvi?appid=007b58b57ff2308d83f8a775c2291ca5&lat=" + lat + "&lon=" + longe;
-    console.log("requestUrl2: ", requestUrl2);
+    //console.log("requestUrl2: ", requestUrl2);
     fetch(requestUrl2)
     .then(function (response2) {
         return response2.json();
     })
     .then(function (data2) {
-        console.log('Data2 ', data2);
+        //console.log('Data2 ', data2);
         $("#UV-index").text("UV Index: " + data2.value);
     });
 }
@@ -107,6 +103,31 @@ function callApi3(){
     })
     .then(function (data3) {
         console.log('Data3 ', data3);
+
+        var day1 = currentDay;
+        day1.setDate(day1.getDate() + 1);
+        var today1 = day1.toLocaleDateString();
+        
+        console.log("today1: ", today1);
+
+        for(var i = 0; i < data3.list.length; i++){
+            
+
+            var d = new Date(data3.list[i].dt_txt);
+            var n = d.toLocaleDateString();
+            
+            if(n === today1){
+                console.log("if statement: ", n);
+            }
+            
+            //console.log("test date converstion: ", n);
+            
+        }
+       
+        
+       
+
         //$("#UV-index").text("UV Index: " + data3.value);
     });
 }
+
