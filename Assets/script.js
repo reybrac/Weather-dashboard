@@ -20,7 +20,7 @@ var printSkills = function (name) {
 
 //Current day
 var currentDay = new Date();
-//$("#currentDay").append(currentDay);
+
 
 
 var handleFormSubmit = function (event) {
