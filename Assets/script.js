@@ -41,8 +41,8 @@ var handleFormSubmit = function (event) {
    
   // resets form
   nameInputEl.val('');
-  var imageType = $(".image1").attr("src", ".\Assets\images\Sun.jpg")
-  $(".card-title").text(nameInput + " (" + currentDay.toLocaleDateString() + ")").append(imageType);
+  
+  $(".card-title").text(nameInput + " (" + currentDay.toLocaleDateString() + ")");
 
   cityName = nameInput;
   callApi1();
@@ -79,10 +79,31 @@ function callApi1(){
         callApi2(data.coord.lat, data.coord.lon);
 
         var imageType = data.weather[0].main;
+        var currentTime = data.dt;
+        var sunRise = data.sys.sunrise;
+        var sunSet = data.sys.sunset;
+        console.log("Sunrise: ", sunRise);
+        console.log("sunset: ", sunSet);
+
+        if(sunRise <= currentTime && currentTime < sunSet ){
+            console.log("its day time");
+            if(imageType === "Sunny" || imageType === "Clear"){
+                
+                $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true");
+            }
+        }else{
+            console.log("its night time");
+            if(imageType === "Clear"){
+                
+                $(".image1").attr("src", ".\Assets\images\clear-night.jpg");
+            }
+        }
         
-        if(imageType ==="Clouds"){
+        if(imageType === "Clouds" || imageType === "Haze"){
             console.log("Clouds: ", imageType);
-        } 
+            $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.jpg?raw=true");
+        } else {
+        }
         
     });
 }
