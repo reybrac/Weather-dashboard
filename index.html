@@ -47,7 +47,7 @@
             
             <br />
         <!-- Shows the list of cities that were searched -->
-            <div class="row col-6">
+            <div class="col-6">
                 <p>searched cities:</p>
                 
                 <ul class="list-group" id="city-list"></ul>
@@ -59,72 +59,73 @@
               <p class="card-text" id="temperature">Temperature</p>
               <p class="card-text" id="humidity">Humidity</p>
               <p class="card-text" id="wind-speed">Wind Speed</p>
-              <p class="card-text" id="UV-index">UV Index</p>
+              <p class="card-text" >UV Index <span id="UV-index"></span></p>
             </div>
+        <!-- Cards that will show the 5 day forecast -->
+        <div class="card-deck" id="five-day-section">
+          <div class="row col-6" id="five-day">
+              
+              <h4> 5-Day Forecast:</h4>
+              
+          </div>
+          <div class="row">
+              <div class="card">
+              
+              <div class="card-body1" id="day1">
+                      <h6 class="card-title" id="date1">Date</h6>
+                      <br>
+                      <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
+                      <p></p>
+                      <p class="card-text" id="day1temp">Temp:</p>
+                      <p class="card-text" id="day1humidity">Humidity:</p>
+              </div>
+              </div>
+              <div class="card">
+              <div class="card-body1" id="day2">
+                      <h6 class="card-title" id="date2">Date</h6>
+                      <br>
+                      <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
+                      <p></p>
+                      <p class="card-text" id="day2temp">Temp:</p>
+                      <p class="card-text" id="day2humidity">Humidity:</p>
+              </div>
+              </div>
+              <div class="card">
+              
+              <div class="card-body1" id="day3">
+                      <h6 class="card-title" id="date3">Date</h6>
+                      <br>
+                      <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
+                      <p></p>
+                      <p class="card-text" id="day3temp">Temp:</p>
+                      <p class="card-text" id="day3humidity">Humidity:</p>
+              </div>
+              </div>
+              <div class="card">
+                  <div class="card-body1" id="day4">
+                      <h6 class="card-title" id="date4">Date</h6>
+                      <br>
+                      <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
+                      <p></p>
+                      <p class="card-text" id="day4temp">Temp:</p>
+                      <p class="card-text" id="day4humidity">Humidity:</p>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="card-body1" id="day5">
+                      <h6 class="card-title" id="date5">Date</h6>
+                      <br>
+                      <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
+                      <p></p>
+                      <p class="card-text" id="day5temp">Temp:</p>
+                      <p class="card-text" id="day5humidity">Humidity:</p>
+                  </div>
+              </div>
+          </div>  
+        </div>
         </div>
         <div class="col-4"></div>
-        <!-- Cards that will show the 5 day forecast -->
-        <div class="card-deck col-8" id="five-day-section">
-            <div class="row col-6" id="five-day">
-                
-                <h4> 5-Day Forecast:</h4>
-                
-            </div>
-            <div class="row">
-                <div class="card">
-                
-                <div class="card-body1" id="day1">
-                        <h6 class="card-title" id="date1">Date</h6>
-                        <br>
-                        <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
-                        <p></p>
-                        <p class="card-text" id="day1temp">Temp:</p>
-                        <p class="card-text" id="day1humidity">Humidity:</p>
-                </div>
-                </div>
-                <div class="card">
-                <div class="card-body1" id="day2">
-                        <h6 class="card-title" id="date2">Date</h6>
-                        <br>
-                        <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
-                        <p></p>
-                        <p class="card-text" id="day2temp">Temp:</p>
-                        <p class="card-text" id="day2humidity">Humidity:</p>
-                </div>
-                </div>
-                <div class="card">
-                
-                <div class="card-body1" id="day3">
-                        <h6 class="card-title" id="date3">Date</h6>
-                        <br>
-                        <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
-                        <p></p>
-                        <p class="card-text" id="day3temp">Temp:</p>
-                        <p class="card-text" id="day3humidity">Humidity:</p>
-                </div>
-                </div>
-                <div class="card">
-                    <div class="card-body1" id="day4">
-                        <h6 class="card-title" id="date4">Date</h6>
-                        <br>
-                        <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
-                        <p></p>
-                        <p class="card-text" id="day4temp">Temp:</p>
-                        <p class="card-text" id="day4humidity">Humidity:</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body1" id="day5">
-                        <h6 class="card-title" id="date5">Date</h6>
-                        <br>
-                        <img class="card-img-top" src="https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true" alt="Temp icon" style="width: 42px; height: 42px;">
-                        <p></p>
-                        <p class="card-text" id="day5temp">Temp:</p>
-                        <p class="card-text" id="day5humidity">Humidity:</p>
-                    </div>
-                </div>
-            </div>  
-        </div>
+        
       </div>
     </div>
     

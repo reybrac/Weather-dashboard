@@ -84,25 +84,34 @@ function callApi1(){
         var sunSet = data.sys.sunset;
         console.log("Sunrise: ", sunRise);
         console.log("sunset: ", sunSet);
-
+        //Checks if it's day or night and then adds appropriate weather image if keywords sunny or clear come over from API
         if(sunRise <= currentTime && currentTime < sunSet ){
-            console.log("its day time");
+            
             if(imageType === "Sunny" || imageType === "Clear"){
-                
+                console.log("its day time and clear & sunny");
                 $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true");
             }
         }else{
-            console.log("its night time");
+            
             if(imageType === "Clear"){
-                
-                $(".image1").attr("src", ".\Assets\images\clear-night.jpg");
+                console.log("its night time and clear");
+                $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Clear-night.jpg?raw=true");
             }
         }
-        
+        // Checks if API sends over keywords clouds/haze and adds appropriate weather image
         if(imageType === "Clouds" || imageType === "Haze"){
             console.log("Clouds: ", imageType);
             $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.jpg?raw=true");
-        } else {
+
+        // Checks if API sends over keyword snow and adds appropriate weather image
+        } else if(imageType === "Snow"){
+            console.log("Snow: ", imageType);
+            $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.jpg?raw=true");
+
+        // Checks if API sends over keyword rain and adds appropriate weather image
+        } else if(imageType === "Rain"){
+            console.log("Rain: ", imageType);
+            $(".image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.jpg?raw=true");
         }
         
     });
@@ -117,8 +126,17 @@ function callApi2(lat, longe){
         return response2.json();
     })
     .then(function (data2) {
-        //console.log('Data2 ', data2);
-        $("#UV-index").text("UV Index: " + data2.value);
+        console.log('Data2 ', data2);
+        if(data2.value <= 2){
+            $("#UV-index").text(data2.value).css("background-color", "greenyellow");
+        }else if(2 < data2.value && data2.value <= 6) {
+             $("#UV-index").text(data2.value).css("background-color", "yellow");
+        } else if(6 < data2.value && data2.value <= 8) {
+            $("#UV-index").text(data2.value).css("background-color", "orange");
+        }else if(data2.value > 8){
+            $("#UV-index").text(data2.value).css("background-color", "red");
+        }
+            
     });
 }
 
@@ -149,16 +167,18 @@ function callApi3(){
             
             var d = new Date(data3.list[i].dt_txt);
             var n = d.toLocaleDateString();
+            var nowApi1 = d.getHours();
+
             //console.log("if statement: ", n);
             if(n === day1){
-                var nowApi1 = d.getHours();
+                
                 
                 console.log("API current time of: ", nowApi1);
                 console.log("Current time of ", nowDate1);
                 $("#date1").text(day1);
                 $("#day1temp").text("Temp: " + data3.list[i].main.temp + " F");
                 $("#day1humidity").text("Humidity: " + data3.list[i].main.humidity + " %");
-                
+
             }
             
             //console.log("test date converstion: ", n);
