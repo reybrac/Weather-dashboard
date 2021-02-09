@@ -41,7 +41,8 @@ var handleFormSubmit = function (event) {
    
   // resets form
   nameInputEl.val('');
-  $(".card-title").text(nameInput + " (" + currentDay.toLocaleDateString() + ")");
+  var imageType = $(".image1").attr("src", ".\Assets\images\Sun.jpg")
+  $(".card-title").text(nameInput + " (" + currentDay.toLocaleDateString() + ")").append(imageType);
 
   cityName = nameInput;
   callApi1();
@@ -64,7 +65,7 @@ function callApi1(){
     })
     .then(function (data) {
         
-        //console.log("data: ", data);
+        console.log("data: ", data);
         // console.log("temp: ", data.main.temp);
         // console.log("humidity: ", data.main.humidity);
         // console.log("speed: ", data.wind.speed);
@@ -76,6 +77,13 @@ function callApi1(){
             $("#wind-speed").text("Wind speed: " + data.wind.speed + " MPH");
         }
         callApi2(data.coord.lat, data.coord.lon);
+
+        var imageType = data.weather[0].main;
+        
+        if(imageType ==="Clouds"){
+            console.log("Clouds: ", imageType);
+        } 
+        
     });
 }
 
@@ -95,7 +103,7 @@ function callApi2(lat, longe){
 
 // API to call for the 5 day forecast
 function callApi3(){
-    var requestUrl3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=007b58b57ff2308d83f8a775c2291ca5";
+    var requestUrl3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
     console.log("requestUrl3: ", requestUrl3);
     fetch(requestUrl3)
     .then(function (response3) {
@@ -103,21 +111,33 @@ function callApi3(){
     })
     .then(function (data3) {
         console.log('Data3 ', data3);
-
-        var day1 = currentDay;
-        day1.setDate(day1.getDate() + 1);
-        var today1 = day1.toLocaleDateString();
+        //Forecast day 1
+        var nextDay1 = currentDay;
+        nextDay1.setDate(nextDay1.getDate() + 1);
+        var day1 = nextDay1.toLocaleDateString();
+        var nowDate1 = nextDay1.getHours();
+        console.log("day1: ", day1);
         
-        console.log("today1: ", today1);
+        //Forecast day 2
+        var today2 = currentDay;
+
+        
 
         for(var i = 0; i < data3.list.length; i++){
             
-
+            
             var d = new Date(data3.list[i].dt_txt);
             var n = d.toLocaleDateString();
-            
-            if(n === today1){
-                console.log("if statement: ", n);
+            //console.log("if statement: ", n);
+            if(n === day1){
+                var nowApi1 = d.getHours();
+                
+                console.log("API current time of: ", nowApi1);
+                console.log("Current time of ", nowDate1);
+                $("#date1").text(day1);
+                $("#day1temp").text("Temp: " + data3.list[i].main.temp + " F");
+                $("#day1humidity").text("Humidity: " + data3.list[i].main.humidity + " %");
+                
             }
             
             //console.log("test date converstion: ", n);
