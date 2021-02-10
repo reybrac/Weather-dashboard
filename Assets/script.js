@@ -126,7 +126,7 @@ function callApi2(lat, longe){
         return response2.json();
     })
     .then(function (data2) {
-        console.log('Data2 ', data2);
+        //console.log('Data2 ', data2);
         if(data2.value <= 2){
             $("#UV-index").text(data2.value).css("background-color", "greenyellow");
         }else if(2 < data2.value && data2.value <= 6) {
@@ -150,45 +150,73 @@ function callApi3(){
     })
     .then(function (data3) {
         console.log('Data3 ', data3);
-        //Forecast day 1
-        var nextDay1 = currentDay;
-        nextDay1.setDate(nextDay1.getDate() + 1);
-        var day1 = nextDay1.toLocaleDateString();
-        var nowDate1 = nextDay1.getHours();
-        console.log("day1: ", day1);
-        
-        //Forecast day 2
-        var today2 = currentDay;
-
-        
-
-        for(var i = 0; i < data3.list.length; i++){
-            
-            
-            var d = new Date(data3.list[i].dt_txt);
-            var n = d.toLocaleDateString();
-            var nowApi1 = d.getHours();
-
-            //console.log("if statement: ", n);
-            if(n === day1){
-                
-                
-                console.log("API current time of: ", nowApi1);
-                console.log("Current time of ", nowDate1);
+        // Start Forecast day 1
+                var d1 = new Date(data3.list[0].dt_txt);
+                var day1 = d1.toLocaleDateString();
+                          
                 $("#date1").text(day1);
-                $("#day1temp").text("Temp: " + data3.list[i].main.temp + " F");
-                $("#day1humidity").text("Humidity: " + data3.list[i].main.humidity + " %");
+                $("#day1temp").text("Temp: " + data3.list[0].main.temp + " F");
+                $("#day1humidity").text("Humidity: " + data3.list[0].main.humidity + " %");
+                
 
-            }
-            
-            //console.log("test date converstion: ", n);
-            
-        }
-       
-        
-       
+                var imageType = data3.list[0].weather[0].main;
+                console.log("Date main: ", imageType)
+                
+                //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
+                    
+                if(imageType === "Sunny" || imageType === "Clear"){
+                    console.log("its clear & sunny");
+                    $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true");              
+                
+                // Checks if API sends over keywords clouds/haze and adds appropriate weather image
+                }else if(imageType === "Clouds" || imageType === "Haze"){
+                    console.log("Clouds: ", imageType);
+                    $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.jpg?raw=true");
 
-        //$("#UV-index").text("UV Index: " + data3.value);
+                // Checks if API sends over keyword snow and adds appropriate weather image
+                } else if(imageType === "Snow"){
+                    console.log("Snow: ", imageType);
+                    $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.jpg?raw=true");
+
+                // Checks if API sends over keyword rain and adds appropriate weather image
+                } else if(imageType === "Rain"){
+                    console.log("Rain: ", imageType);
+                    $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.jpg?raw=true");
+                }  
+
+        // Start Forecast day 1
+            var d2 = new Date(data3.list[0].dt_txt);
+            var day2 = d2.toLocaleDateString();
+                    
+            $("#date1").text(day1);
+            $("#day1temp").text("Temp: " + data3.list[0].main.temp + " F");
+            $("#day1humidity").text("Humidity: " + data3.list[0].main.humidity + " %");
+            
+
+            var imageType = data3.list[0].weather[0].main;
+            console.log("Date main: ", imageType)
+            
+            //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
+                
+            if(imageType === "Sunny" || imageType === "Clear"){
+                console.log("its clear & sunny");
+                $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Sun.jpg?raw=true");              
+            
+            // Checks if API sends over keywords clouds/haze and adds appropriate weather image
+            }else if(imageType === "Clouds" || imageType === "Haze"){
+                console.log("Clouds: ", imageType);
+                $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.jpg?raw=true");
+
+            // Checks if API sends over keyword snow and adds appropriate weather image
+            } else if(imageType === "Snow"){
+                console.log("Snow: ", imageType);
+                $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.jpg?raw=true");
+
+            // Checks if API sends over keyword rain and adds appropriate weather image
+            } else if(imageType === "Rain"){
+                console.log("Rain: ", imageType);
+                $("#image1").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.jpg?raw=true");
+            }  
     });
 }
 

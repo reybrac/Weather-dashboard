@@ -29,7 +29,7 @@ Utilized for loops, if statements, and function calls in order to get all areas 
 #### Installation-Deployment
 Copy the link and paste it to your browser to install and deploy it. 
 
-https://reybrac.github.io/Work-day-scheduler
+https://reybrac.github.io/Weather-dashboard/
 
 
 ##### Future_scope
