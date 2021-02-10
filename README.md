@@ -1,1 +1,39 @@
 # Weather-dashboard
+
+Creating the initial file
+
+# Table of Contents
+1. [General Info](#general-info)
+2. [Screenshot](#Screenshot)
+3. [Installation-Deployment](#Installation-Deployment)
+4. [Future_scope](#Future_scope)
+5. [Acknowledgements](#Acknowledgements)
+
+## General Info
+
+Creating a Weather dashbaord utilizing JQuery, Javascript, CSS, HTML, and the Open Weather API connection (https://openweathermap.org/api). 
+
+This exersize helped introduce the concept of API connections.  
+1. There was an initial API call to look up the weather for a specific city. This required input from a user to enter a specific city. 
+2. The second API call was to get the UV index
+3. The third API call was to get the 5 day forecast
+
+There were several challenging aspects to the project. Integrating and linking the API calls, understanding the type of data and reviewing the documentation, and correctly creating items and displaying correctly on the HTML file. 
+
+Utilized for loops, if statements, and function calls in order to get all areas to work. It was a great first introduction to working with API's.
+
+
+### Screenshot
+![alt text](https://github.com/reybrac/Work-day-scheduler/blob/main/Assets/WD-scheduler.JPG?raw=true)
+
+#### Installation-Deployment
+Copy the link and paste it to your browser to install and deploy it. 
+
+https://reybrac.github.io/Work-day-scheduler
+
+
+##### Future_scope
+Future scope would be to create favorites buttons that once clicked can show the current weather for that location.
+
+###### Acknowledgments
+Github website, W3 schools, YouTube, and Stackoverflow helped with examples. TA Zac helped challenge and guide in the right direction. 
