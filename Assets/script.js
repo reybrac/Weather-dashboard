@@ -57,7 +57,7 @@ formEl.on('submit', handleFormSubmit);
 
 //API call to get the information by the city name
 function callApi1(){
-    var requestUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
+    var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
     //console.log("requestUrl: ", requestUrl);
     fetch(requestUrl)
     .then(function (response) {
@@ -119,7 +119,7 @@ function callApi1(){
 
 // API to call the UV data
 function callApi2(lat, longe){
-    var requestUrl2 = "http://api.openweathermap.org/data/2.5/uvi?appid=007b58b57ff2308d83f8a775c2291ca5&lat=" + lat + "&lon=" + longe;
+    var requestUrl2 = "https://api.openweathermap.org/data/2.5/uvi?appid=007b58b57ff2308d83f8a775c2291ca5&lat=" + lat + "&lon=" + longe;
     //console.log("requestUrl2: ", requestUrl2);
     fetch(requestUrl2)
     .then(function (response2) {
@@ -142,7 +142,7 @@ function callApi2(lat, longe){
 
 // API to call for the 5 day forecast
 function callApi3(){
-    var requestUrl3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
+    var requestUrl3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=007b58b57ff2308d83f8a775c2291ca5";
     console.log("requestUrl3: ", requestUrl3);
     fetch(requestUrl3)
     .then(function (response3) {
