@@ -12,9 +12,9 @@ var nameInputEl = $('#city-name');
 var cityListEl = $('#city-list');
 
 var printCity = function (name) {
-  var listEl = $('<li>');
+  var listEl = $('<button>');
   var listDetail = name;
-  listEl.addClass('list-group-item').text(listDetail);
+  listEl.addClass('list-group-button').text(listDetail);
   listEl.appendTo(cityListEl);
 };
 
@@ -216,6 +216,108 @@ function callApi3(){
             } else if(imageType2 === "Rain"){
                 console.log("Rain: ", imageType2);
                 $("#image2").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.png?raw=true");
+            }  
+        
+            // Start Forecast day 3
+            var d3 = new Date(data3.list[19].dt_txt);
+            var day3 = d3.toLocaleDateString();
+                    
+            $("#date3").text(day3);
+            $("#day3temp").text("Temp: " + data3.list[19].main.temp + " F");
+            $("#day3humidity").text("Humidity: " + data3.list[19].main.humidity + " %");
+            
+
+            var imageType3 = data3.list[19].weather[0].main;
+            console.log("Date main: ", imageType3);
+            
+            //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
+                
+            if(imageType3 === "Sunny" || imageType3 === "Clear"){
+                console.log("its clear & sunny");
+                $("#image3").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/sun.png?raw=true");              
+            
+            // Checks if API sends over keywords clouds/haze and adds appropriate weather image
+            }else if(imageType3 === "Clouds" || imageType3 === "Haze" || imageType3 === "Mist"){
+                console.log("Clouds: ", imageType3);
+                $("#image3").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.png?raw=true");
+
+            // Checks if API sends over keyword snow and adds appropriate weather image
+            } else if(imageType3 === "Snow"){
+                console.log("Snow: ", imageType3);
+                $("#image3").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.png?raw=true");
+
+            // Checks if API sends over keyword rain and adds appropriate weather image
+            } else if(imageType3 === "Rain"){
+                console.log("Rain: ", imageType3);
+                $("#image3").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.png?raw=true");
+            }  
+
+            // Start Forecast day 4
+            var d4 = new Date(data3.list[27].dt_txt);
+            var day4 = d4.toLocaleDateString();
+                    
+            $("#date4").text(day4);
+            $("#day4temp").text("Temp: " + data3.list[27].main.temp + " F");
+            $("#day4humidity").text("Humidity: " + data3.list[27].main.humidity + " %");
+            
+
+            var imageType4 = data3.list[27].weather[0].main;
+            console.log("Date main: ", imageType4);
+            
+            //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
+                
+            if(imageType4 === "Sunny" || imageType4 === "Clear"){
+                console.log("its clear & sunny");
+                $("#image4").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/sun.png?raw=true");              
+            
+            // Checks if API sends over keywords clouds/haze and adds appropriate weather image
+            }else if(imageType4 === "Clouds" || imageType4 === "Haze" || imageType4 === "Mist"){
+                console.log("Clouds: ", imageType4);
+                $("#image4").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.png?raw=true");
+
+            // Checks if API sends over keyword snow and adds appropriate weather image
+            } else if(imageType4 === "Snow"){
+                console.log("Snow: ", imageType4);
+                $("#image4").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.png?raw=true");
+
+            // Checks if API sends over keyword rain and adds appropriate weather image
+            } else if(imageType4 === "Rain"){
+                console.log("Rain: ", imageType4);
+                $("#image4").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.png?raw=true");
+            }  
+
+            // Start Forecast day 5
+            var d5 = new Date(data3.list[36].dt_txt);
+            var day5 = d5.toLocaleDateString();
+                    
+            $("#date5").text(day5);
+            $("#day5temp").text("Temp: " + data3.list[36].main.temp + " F");
+            $("#day5humidity").text("Humidity: " + data3.list[36].main.humidity + " %");
+            
+
+            var imageType5 = data3.list[36].weather[0].main;
+            console.log("Date main: ", imageType5);
+            
+            //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
+                
+            if(imageType5 === "Sunny" || imageType5 === "Clear"){
+                console.log("its clear & sunny");
+                $("#image5").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/sun.png?raw=true");              
+            
+            // Checks if API sends over keywords clouds/haze and adds appropriate weather image
+            }else if(imageType5 === "Clouds" || imageType5 === "Haze" || imageType5 === "Mist"){
+                console.log("Clouds: ", imageType5);
+                $("#image5").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/cloud.png?raw=true");
+
+            // Checks if API sends over keyword snow and adds appropriate weather image
+            } else if(imageType5 === "Snow"){
+                console.log("Snow: ", imageType5);
+                $("#image5").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/snow.png?raw=true");
+
+            // Checks if API sends over keyword rain and adds appropriate weather image
+            } else if(imageType5 === "Rain"){
+                console.log("Rain: ", imageType5);
+                $("#image5").attr("src", "https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/rain.png?raw=true");
             }  
     });
 }

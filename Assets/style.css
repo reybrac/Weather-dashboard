@@ -20,7 +20,7 @@ body {
 
   .container-fluid{
       padding: 30px;
-      background-color: rgb(46, 45, 45);
+      background-color: dodgerblue;
       color: white;
   }
   
@@ -36,7 +36,7 @@ body {
       padding: 6px;
   }
 
- h4{
+   h4{
      padding-top: 10px;
      text-align: start;
      
@@ -47,3 +47,17 @@ body {
    width: 45px;
  }
  
+ body{
+  background: url(./images/cloud-background.jpg);
+  background-size: cover;
+ }
+
+
+.col-10{
+  background-color: lightcyan;
+  opacity: .75
+}
+
+.list-group-button:hover{
+  background-color: slategray;
+}
