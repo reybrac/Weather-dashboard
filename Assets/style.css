@@ -30,13 +30,16 @@ body {
 
   .card-body1{
       background-color: dodgerblue;
+      
       color: white;
       
       padding: 6px;
   }
 
  h4{
-     padding-top: 20px;
+     padding-top: 10px;
+     text-align: start;
+     
  }
 
  

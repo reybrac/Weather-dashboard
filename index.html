@@ -26,18 +26,19 @@
     </div>
     <div class="container">
       <div class="row justify-content-start">
-        <div class="col-4">
+        <div class="col-2">
           
             <br />
             <!-- Form to search for a city -->
             <form id="city-form">
                 <div class="form-group row">
-                    <label for="city" class="col-sm-4 col-form-label">
+                    <label for="city" class="col-form-label">
                         Search for a city:
                     </label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="city-name" />
-                    </div>
+                    <br>
+                    <!-- <div class="col-sm-8"> -->
+                    <input type="text" class="form-control" id="city-name" />
+                    <!-- </div> -->
                 </div>
                 
                 <button type="submit" value="Submit" class="btn btn-info">
@@ -47,13 +48,13 @@
             
             <br />
         <!-- Shows the list of cities that were searched -->
-            <div class="col-6">
+            <div>
                 <p>searched cities:</p>
                 
                 <ul class="list-group" id="city-list"></ul>
             </div>
         </div>
-        <div class="card" id="display-section" style="width: 45rem;">
+        <div class="card col-10" id="display-section" style="width: auto;">
             <div class="card-body">
               <h5 class="card-title">City Name</h5><img class="image1" src="#">
               <p class="card-text" id="temperature">Temperature</p>
@@ -62,13 +63,14 @@
               <p class="card-text" >UV Index <span id="UV-index"></span></p>
             </div>
         <!-- Cards that will show the 5 day forecast -->
+        <div class="row" id="five-day">          
+              
+        </div>
+        <h4> 5-Day Forecast:</h4>
         <div class="card-deck" id="five-day-section">
-          <div class="row col-6" id="five-day">
-              
-              <h4> 5-Day Forecast:</h4>
-              
-          </div>
-          <div class="row">
+          
+          
+          <div class="row col-12">
               <div class="card">
               
               <div class="card-body1" id="day1">
