@@ -34,7 +34,7 @@ https://reybrac.github.io/Weather-dashboard/
 
 
 ##### Future_scope
-Future scope would be to add several times throughout the day, so that the user can plan out their day.
+Future scope would be to add several times throughout the day, so that the user can plan out their day. Wouldlalso like to improve the mobile layout to look better.
 
 ###### Acknowledgments
 Github website, W3 schools, YouTube, and Stackoverflow helped with examples. TA Zac helped challenge and guide in the right direction. 
