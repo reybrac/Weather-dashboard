@@ -160,15 +160,15 @@ function callApi3(){
     .then(function (data3) {
         console.log('Data3 ', data3);
         // Start Forecast day 1
-                var d1 = new Date(data3.list[4].dt_txt);
+                var d1 = new Date(data3.list[5].dt_txt);
                 var day1 = d1.toLocaleDateString();
                           
                 $("#date1").text(day1);
-                $("#day1temp").text("Temp: " + data3.list[4].main.temp + " F");
+                $("#day1temp").text("Temp: " + data3.list[5].main.temp + " F");
                 $("#day1humidity").text("Humidity: " + data3.list[4].main.humidity + " %");
                 
 
-                var imageType = data3.list[4].weather[0].main;
+                var imageType = data3.list[5].weather[0].main;
                 //console.log("Date main: ", imageType)
                 
                 //Checks if API sends over keywords sunny/clear and then adds appropriate weather image if keywords sunny or clear come over from API
@@ -339,6 +339,7 @@ function callApi3(){
         cityName = $(this).text();
         $(".card-title").text(cityName + " (" + currentDay.toLocaleDateString() + ")");
         callApi1(cityName);
+        callApi3();
         
     });
   
