@@ -20,11 +20,12 @@ This exersize helped introduce the concept of API connections.
 
 There were several challenging aspects to the project. Integrating and linking the API calls, understanding the type of data and reviewing the documentation, and correctly creating items and displaying correctly on the HTML file. 
 
-Utilized for loops, if statements, and function calls in order to get all areas to work. It was a great first introduction to working with API's.
+Utilized for loops, if statements, and function calls in order to get all areas to work. It was a great first introduction to working with API's. The last part was the favority buttons and making it work correctly.
 
 
 ### Screenshot
-![alt text](https://github.com/reybrac/Work-day-scheduler/blob/main/Assets/WD-scheduler.JPG?raw=true)
+![alt text](Assets\images\Weather-Dashboard.JPG)
+
 
 #### Installation-Deployment
 Copy the link and paste it to your browser to install and deploy it. 
@@ -33,7 +34,7 @@ https://reybrac.github.io/Weather-dashboard/
 
 
 ##### Future_scope
-Future scope would be to create favorites buttons that once clicked can show the current weather for that location.
+Future scope would be to add several times throughout the day, so that the user can plan out their day.
 
 ###### Acknowledgments
 Github website, W3 schools, YouTube, and Stackoverflow helped with examples. TA Zac helped challenge and guide in the right direction. 
