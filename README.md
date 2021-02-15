@@ -11,7 +11,7 @@ Creating the initial file
 
 ## General Info
 
-Creating a Weather dashbaord utilizing JQuery, Javascript, CSS, HTML, and the Open Weather API connection (https://openweathermap.org/api). 
+Creating a Weather dashboard utilizing JQuery, Javascript, CSS, HTML, and the Open Weather API connection (https://openweathermap.org/api). 
 
 This exersize helped introduce the concept of API connections.  
 1. There was an initial API call to look up the weather for a specific city. This required input from a user to enter a specific city. 
@@ -24,7 +24,7 @@ Utilized for loops, if statements, and function calls in order to get all areas 
 
 
 ### Screenshot
-![alt text](Assets\images\Weather-Dashboard.JPG)
+![alt text]("https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Weather-Dashboard.JPG?raw=true")
 
 
 #### Installation-Deployment
