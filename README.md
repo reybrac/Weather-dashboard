@@ -24,7 +24,7 @@ Utilized for loops, if statements, and function calls in order to get all areas 
 
 
 ### Screenshot
-![alt text]("https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Weather-Dashboard.JPG?raw=true")
+![alt text](https://github.com/reybrac/Weather-dashboard/blob/main/Assets/images/Weather-Dashboard.JPG?raw=true)
 
 
 #### Installation-Deployment
